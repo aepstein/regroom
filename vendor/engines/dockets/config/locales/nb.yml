@@ -1,0 +1,21 @@
+nb:
+  plugins:
+    dockets:
+      title: Dockets
+  admin:
+    dockets:
+      actions:
+        create_new: Lag en ny Docket
+        reorder: Endre rekkefølgen på Dockets
+        reorder_done: Ferdig å endre rekkefølgen Dockets
+      records:
+        title: Dockets
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Dockets enda. Klikk på "Lag en ny Docket" for å legge til din første docket.
+      docket:
+        view_live_html: Vis hvordan denne docket ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne docket
+        delete: Fjern denne docket permanent
+  dockets:
+    show:
+      other: Andre Dockets

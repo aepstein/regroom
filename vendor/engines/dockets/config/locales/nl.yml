@@ -1,0 +1,21 @@
+nl:
+  plugins:
+    dockets:
+      title: Dockets
+  admin:
+    dockets:
+      actions:
+        create_new: Maak een nieuwe Docket
+        reorder: Wijzig de volgorde van de Dockets
+        reorder_done: Klaar met het wijzingen van de volgorde van de Dockets
+      records:
+        title: Dockets
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Dockets. Druk op 'Maak een nieuwe Docket' om de eerste aan te maken.
+      docket:
+        view_live_html: Bekijk deze docket op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze docket
+        delete: Verwijder deze docket voor eeuwig
+  dockets:
+    show:
+      other: Andere Dockets
