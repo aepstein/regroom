@@ -38,7 +38,7 @@ gem 'refinerycms',              '= 0.9.9.13'
 group :development, :test do
   # To use refinerycms-testing, uncomment it (if it's commented out) and run 'bundle install'
   # Then, run 'rails generate refinerycms_testing' which will copy its support files.
-  # gem 'refinerycms-testing',    '~> 0.9.9.13'
+  gem 'refinerycms-testing',    '~> 0.9.9.13'
 end
 
 # END REFINERY CMS ============================================================
@@ -58,7 +58,6 @@ end
 # Add i18n support (optional, you can remove this if you really want to).
 gem 'refinerycms-i18n',         '~> 0.9.9.16'
 
+gem 'refinerycms-dockets', '1.0', :path => 'vendor/engines'
 
 # END USER DEFINED
-
-gem 'refinerycms-dockets', '1.0', :path => 'vendor/engines'
