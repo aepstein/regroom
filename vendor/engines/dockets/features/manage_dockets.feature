@@ -60,4 +60,4 @@ Feature: Dockets
     And I follow "Remove this docket forever"
     Then I should see "'UniqueTitleOne' was successfully removed."
     And I should have 0 dockets
- 
+

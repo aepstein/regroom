@@ -1,6 +1,6 @@
 class DocketPerspectivesController < ApplicationController
 
-  before_filter :find_all_docket_perspectives
+  before_filter :find_all_perspectives
   before_filter :find_page
 
   def index
@@ -19,8 +19,8 @@ class DocketPerspectivesController < ApplicationController
 
 protected
 
-  def find_all_dockets
-    @dockets = Docket.order('position ASC')
+  def find_all_perspectives
+    @perspectives = DocketPerspective.scoped
   end
 
   def find_page

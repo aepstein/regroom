@@ -110,6 +110,9 @@ GEM
       railties (>= 3.0.0)
     nokogiri (1.4.4)
     orm_adapter (0.0.4)
+    pickle (0.4.7)
+      cucumber (>= 0.8)
+      rake
     polyglot (0.3.1)
     rack (1.2.2)
     rack-cache (1.0)
@@ -231,6 +234,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  pickle (~> 0.4.7)
   rails (= 3.0.5)
   refinerycms (= 0.9.9.13)
   refinerycms-dockets (= 1.0)!
