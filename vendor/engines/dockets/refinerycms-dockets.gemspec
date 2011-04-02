@@ -7,4 +7,7 @@ Gem::Specification.new do |s|
   s.summary           = 'Dockets engine for Refinery CMS'
   s.require_paths     = %w(lib)
   s.files             = Dir['lib/**/*', 'config/**/*', 'app/**/*']
+  s.add_dependency    'nested_set', '~> 1.6.4'
+  s.add_dependency    'state_machine', '~> 0.10.2'
 end
+

@@ -5,6 +5,8 @@ def setup_environment
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
+  # Require factory girl
+  require 'factory_girl'
 
   # Requires supporting files with custom matchers and macros, etc,
   # in ./support/ and its subdirectories.
@@ -31,6 +33,8 @@ def setup_environment
 end
 
 def each_run
+  # Load factory_girl factories for engines
+  Dir[File.expand_path( '../../vendor/engines/*/spec/support/factories.rb', __FILE__ )].each { |f| require f }
 end
 
 require 'rubygems'
@@ -74,3 +78,4 @@ def capture_stdout(&block)
   end
  fake.string
 end
+
