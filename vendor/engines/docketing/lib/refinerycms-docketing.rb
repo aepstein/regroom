@@ -1,7 +1,7 @@
 require 'refinerycms-base'
 
 module Refinery
-  module Dockets
+  module Docketing
     class Engine < Rails::Engine
       initializer "static assets" do |app|
         app.middleware.insert_after ::ActionDispatch::Static, ::ActionDispatch::Static, "#{root}/public"
@@ -9,7 +9,8 @@ module Refinery
 
       config.after_initialize do
         Refinery::Plugin.register do |plugin|
-          plugin.name = "dockets"
+          plugin.name = "docketing"
+          plugin.url = { :controller => 'admin/dockets', :action => 'index' }
           plugin.activity = {
             :class => Docket,
             :title => 'name'
@@ -19,3 +20,4 @@ module Refinery
     end
   end
 end
+

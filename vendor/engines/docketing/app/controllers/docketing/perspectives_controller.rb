@@ -1,4 +1,4 @@
-module Dockets
+module Docketing
   class PerspectivesController < ApplicationController
 
     before_filter :find_all_perspectives

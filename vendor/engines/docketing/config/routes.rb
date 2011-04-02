@@ -1,6 +1,6 @@
 Refinery::Application.routes.draw do
   # Dockets namespace for PUBLIC pages
-  scope(:path => 'dockets', :as => 'docket', :module => 'dockets') do
+  scope(:path => 'docketing', :as => 'docket', :module => 'docketing') do
     resources :perspectives, :only => [:index, :show]
   end
   resources :dockets, :only => [:index, :show]
@@ -8,7 +8,7 @@ Refinery::Application.routes.draw do
   # Admin namespace
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
     # Dockets namespace within admin namespace
-    scope(:path => 'dockets', :as => 'docket', :module => 'dockets') do
+    scope(:path => 'docketing', :as => 'docket', :module => 'docketing') do
       resources :perspectives, :except => :show
     end
     resources :dockets, :except => :show do

@@ -1,7 +1,7 @@
 PATH
   remote: vendor/engines
   specs:
-    refinerycms-dockets (1.0)
+    refinerycms-docketing (1.0)
       nested_set (~> 1.6.4)
       state_machine (~> 0.10.2)
 
@@ -240,7 +240,7 @@ DEPENDENCIES
   pickle (~> 0.4.7)
   rails (= 3.0.5)
   refinerycms (= 0.9.9.13)
-  refinerycms-dockets (= 1.0)!
+  refinerycms-docketing (= 1.0)!
   refinerycms-i18n (~> 0.9.9.16)
   refinerycms-testing (~> 0.9.9.13)
   sqlite3

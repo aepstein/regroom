@@ -1,5 +1,5 @@
 module Admin
-  module Dockets
+  module Docketing
     class PerspectivesController < Admin::BaseController
 
       crudify :docket_perspective,

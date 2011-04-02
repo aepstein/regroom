@@ -1,6 +1,6 @@
 User.all.each do |user|
-  if user.plugins.where(:name => 'dockets').blank?
-    user.plugins.create(:name => 'dockets',
+  if user.plugins.where(:name => 'docketing').blank?
+    user.plugins.create(:name => 'docketing',
                         :position => (user.plugins.maximum(:position) || -1) +1)
   end
 end
@@ -15,3 +15,4 @@ page = Page.create(
 Page.default_parts.each do |default_page_part|
   page.parts.create(:title => default_page_part, :body => nil)
 end
+

@@ -59,6 +59,6 @@ end
 # Add i18n support (optional, you can remove this if you really want to).
 gem 'refinerycms-i18n',         '~> 0.9.9.16'
 
-gem 'refinerycms-dockets', '1.0', :path => 'vendor/engines'
+gem 'refinerycms-docketing', '1.0', :path => 'vendor/engines'
 
 # END USER DEFINED

@@ -1,5 +1,5 @@
 page = Page.create(
-  :title => 'Docket Perspectives',
+  :title => 'Perspectives',
   :link_url => '/dockets/perspectives',
   :deletable => false,
   :position => ((Page.maximum(:position, :conditions => {:parent_id => nil}) || -1)+1),
