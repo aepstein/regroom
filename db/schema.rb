@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110402144142) do
+ActiveRecord::Schema.define(:version => 20110402201452) do
 
   create_table "docket_items", :force => true do |t|
     t.integer  "docket_id",       :null => false
@@ -87,9 +87,6 @@ ActiveRecord::Schema.define(:version => 20110402144142) do
     t.integer  "page_id"
     t.string   "locale"
     t.string   "title"
-    t.string   "meta_keywords"
-    t.text     "meta_description"
-    t.string   "browser_title"
     t.string   "custom_title"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -156,6 +153,19 @@ ActiveRecord::Schema.define(:version => 20110402144142) do
 
   add_index "roles_users", ["role_id", "user_id"], :name => "index_roles_users_on_role_id_and_user_id"
   add_index "roles_users", ["user_id", "role_id"], :name => "index_roles_users_on_user_id_and_role_id"
+
+  create_table "seo_meta", :force => true do |t|
+    t.integer  "seo_meta_id"
+    t.string   "seo_meta_type"
+    t.string   "browser_title"
+    t.string   "meta_keywords"
+    t.text     "meta_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "seo_meta", ["id"], :name => "index_seo_meta_on_id"
+  add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], :name => "index_seo_meta_on_seo_meta_id_and_seo_meta_type"
 
   create_table "slugs", :force => true do |t|
     t.string   "name"

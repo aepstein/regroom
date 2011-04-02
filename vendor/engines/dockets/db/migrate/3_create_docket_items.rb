@@ -27,7 +27,7 @@ class CreateDocketItems < ActiveRecord::Migration
     remove_index :docket_items, :creator_user_id
     remove_index :docket_items, :perspective_id
     remove_index :docket_items, [ :docket_id, :title ]
-    drop_table :perspectives
+    drop_table :docket_items
   end
 
 end

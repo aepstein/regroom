@@ -7,11 +7,12 @@ class CreateDocketPerspectives < ActiveRecord::Migration
       t.timestamps
     end
     add_index :docket_perspectives, :name, :unique => true
+    load(Rails.root.join('db', 'seeds', 'docket_perspectives.rb'))
   end
 
   def self.down
     remove_index :docket_perspectives, :name
-    drop_table :perspectives
+    drop_table :docket_perspectives
   end
 
 end

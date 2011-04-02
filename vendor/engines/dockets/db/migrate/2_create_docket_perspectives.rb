@@ -11,7 +11,7 @@ class CreateDocketPerspectives < ActiveRecord::Migration
 
   def self.down
     remove_index :docket_perspectives, :name
-    drop_table :perspectives
+    drop_table :docket_perspectives
   end
 
 end
