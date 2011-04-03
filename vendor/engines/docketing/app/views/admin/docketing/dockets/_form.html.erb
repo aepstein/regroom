@@ -1,14 +1,14 @@
-<%= form_for [:admin, @docket] do |f| -%>
+<%= form_for [:admin, :docketing, @docket] do |f| -%>
   <%= render :partial => "/shared/admin/error_messages", :locals => {
           :object => @docket,
           :include_object_name => true
         } %>
-  
+
   <div class='field'>
     <%= f.label :name -%>
     <%= f.text_field :name, :class => 'larger widest' -%>
   </div>
-  
+
   <%= render :partial => "/shared/admin/form_actions",
               :locals => {
                 :f => f,
@@ -17,3 +17,4 @@
                 :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @docket.name)
               } %>
 <% end -%>
+

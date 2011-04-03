@@ -9,8 +9,9 @@ module Refinery
 
       config.after_initialize do
         Refinery::Plugin.register do |plugin|
-          plugin.name = "docketing"
-          plugin.url = { :controller => 'admin/dockets', :action => 'index' }
+          plugin.name = "refinerycms_docketing"
+          plugin.url = { :controller => 'admin/docketing/dockets', :action => 'index' }
+          plugin.menu_match = /^\/?(admin|refinery)\/docketing\/?(dockets|items|perspectives)?/
           plugin.activity = {
             :class => Docket,
             :title => 'name'

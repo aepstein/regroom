@@ -4,10 +4,10 @@ en:
       image_picker:
         image: image
   plugins:
-    docketing:
+    refinerycms_docketing:
       title: Docketing
   admin:
-    dockets:
+    docketing:
       actions:
         create_new: Add New Docket
         reorder: Reorder Dockets
@@ -20,7 +20,7 @@ en:
         view_live_html: View this docket live <br/><em>(opens in a new window)</em>
         edit: Edit this docket
         delete: Remove this docket forever
-  dockets:
+  docketing:
     show:
       other: Other Dockets
 

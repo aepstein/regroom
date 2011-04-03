@@ -1,28 +1,29 @@
 <ul>
-  <% if Admin::DocketsController.searchable? %>
+  <% if Admin::Docketing::DocketsController.searchable? %>
     <li>
       <%= render :partial => "/shared/admin/search",
                   :locals => {
-                    :url => admin_dockets_url
+                    :url => admin_docketing_dockets_url
                   } %>
     </li>
   <% end %>
   <li>
-    <%= link_to t('.create_new'), new_admin_docket_url,
+    <%= link_to t('.create_new'), new_admin_docketing_docket_url,
                  :class => "add_icon" %>
   </li>
-<% if !searching? and Admin::DocketsController.sortable? and Docket.count > 1 %>
+<% if !searching? and Admin::Docketing::DocketsController.sortable? and Docket.count > 1 %>
   <li>
     <%= link_to t('.reorder', :what => "Dockets"),
-                 admin_dockets_url,
+                 admin_docketing_dockets_url,
                  :id => "reorder_action",
                  :class => "reorder_icon" %>
 
     <%= link_to t('.reorder_done', :what => "Dockets"),
-                 admin_dockets_url,
+                 admin_docketing_dockets_url,
                  :id => "reorder_action_done",
                  :style => "display: none;",
                  :class => "reorder_icon" %>
   </li>
 <% end %>
 </ul>
+
