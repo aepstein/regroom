@@ -2,19 +2,19 @@ Factory.define :docket do |f|
   f.sequence(:name) { |i| "Docket #{i}" }
 end
 
-Factory.define :docket_item do |f|
+Factory.define :item, :class => 'DocketItem' do |f|
   f.association :docket
-  f.association :perspective, :factory => :docket_perspective
-  f.association :creator, :factory => :user
+  f.association :perspective, :factory => :perspective
+  f.association :creator, :factory => :docketing_user
   f.sequence(:title) { |i| "Item #{i}" }
   f.content "This is the content of the document."
 end
 
-Factory.define :docket_perspective do |f|
+Factory.define :perspective, :class => 'DocketPerspective' do |f|
   f.sequence( :name ) { |i| "Perspective #{i}" }
 end
 
-Factory.define :user do |f|
+Factory.define :docketing_user, :class => 'User' do |f|
   f.sequence( :username ) { |i| "User #{i}" }
   f.sequence( :email ) { |i| "user#{i}@example.com" }
   f.password "secret"

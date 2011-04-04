@@ -21,8 +21,24 @@ en:
           view_live_html: View this docket live <br/><em>(opens in a new window)</em>
           edit: Edit this docket
           delete: Remove this docket forever
+      perspectives:
+        actions:
+          create_new: Add New Perspective
+          reorder: Reorder Perspectives
+          reorder_done: Done Reordering Perspectives
+        records:
+          title: Perspectives
+          sorry_no_results: Sorry! There are no results found.
+          no_items_yet: There are no Perspectives yet. Click "Add New Perspective" to add your first docket.
+        perspective:
+          view_live_html: View this persepective live <br/><em>(opens in a new window)</em>
+          edit: Edit this perspective
+          delete: Remove this perspective forever
   docketing:
     dockets:
       show:
         other: Other Dockets
+    perspectives:
+      show:
+        other: Other Perspectives
 

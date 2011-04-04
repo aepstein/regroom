@@ -6,8 +6,14 @@ module NavigationHelpers
         when /the list of dockets/
           admin_docketing_dockets_path
 
-         when /the new docket form/
+        when /the new docket form/
           new_admin_docketing_docket_path
+
+        when /the list of perspectives/
+          admin_docketing_perspectives_path
+
+        when /the new perspective form/
+          new_admin_docketing_perspective_path
         else
           nil
         end
