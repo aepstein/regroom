@@ -1,3 +1,4 @@
+<% back = url_for(:back) %>
 <%= form_for [:admin, :docketing, @docket] do |f| -%>
   <%= render :partial => "/shared/admin/error_messages", :locals => {
           :object => @docket,
@@ -13,8 +14,11 @@
               :locals => {
                 :f => f,
                 :continue_editing => false,
-                :delete_title => t('delete', :scope => 'admin.dockets.docket'),
-                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @docket.name)
+                :delete_title => t('delete', :scope => 'admin.docketing.docket'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @docket.name),
+                :delete_url => ( @docket.persisted? ? admin_docketing_docket_path( @docket ) : nil ),
+                :back => back,
+                :cancel_url => ((back.include?('javascript') or action_name =~ /^(create|update)$/) ? send("admin_docketing_dockets_url") : back)
               } %>
 <% end -%>
 

@@ -4,10 +4,10 @@ module NavigationHelpers
       def path_to(page_name)
         case page_name
         when /the list of dockets/
-          admin_dockets_path
+          admin_docketing_dockets_path
 
          when /the new docket form/
-          new_admin_docket_path
+          new_admin_docketing_docket_path
         else
           nil
         end
@@ -15,3 +15,4 @@ module NavigationHelpers
     end
   end
 end
+
