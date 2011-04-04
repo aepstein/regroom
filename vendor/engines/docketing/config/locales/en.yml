@@ -8,19 +8,21 @@ en:
       title: Docketing
   admin:
     docketing:
-      actions:
-        create_new: Add New Docket
-        reorder: Reorder Dockets
-        reorder_done: Done Reordering Dockets
-      records:
-        title: Dockets
-        sorry_no_results: Sorry! There are no results found.
-        no_items_yet: There are no Dockets yet. Click "Add New Docket" to add your first docket.
-      docket:
-        view_live_html: View this docket live <br/><em>(opens in a new window)</em>
-        edit: Edit this docket
-        delete: Remove this docket forever
+      dockets:
+        actions:
+          create_new: Add New Docket
+          reorder: Reorder Dockets
+          reorder_done: Done Reordering Dockets
+        records:
+          title: Dockets
+          sorry_no_results: Sorry! There are no results found.
+          no_items_yet: There are no Dockets yet. Click "Add New Docket" to add your first docket.
+        docket:
+          view_live_html: View this docket live <br/><em>(opens in a new window)</em>
+          edit: Edit this docket
+          delete: Remove this docket forever
   docketing:
-    show:
-      other: Other Dockets
+    dockets:
+      show:
+        other: Other Dockets
 
