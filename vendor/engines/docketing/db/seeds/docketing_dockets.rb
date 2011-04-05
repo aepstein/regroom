@@ -7,7 +7,7 @@ end
 
 page = Page.create(
   :title => 'Dockets',
-  :link_url => '/docketing',
+  :link_url => '/dockets',
   :deletable => false,
   :position => ((Page.maximum(:position, :conditions => {:parent_id => nil}) || -1)+1),
   :menu_match => '^/(docketing|dockets?)(/|/.+?|)$'

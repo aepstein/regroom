@@ -9,7 +9,9 @@ class DocketingItem < ActiveRecord::Base
     :foreign_key => 'docketing_perspective_id', :dependent => :destroy,
     :inverse_of => :items
 
-  acts_as_nested_set
+  acts_as_nested_set :scope => :docketing_docket
+
+  acts_as_index [ :title, :content ]
 
   validates :docket, :presence => true
   validates :perspective, :presence => true

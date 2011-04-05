@@ -1,6 +1,7 @@
 Refinery::Application.routes.draw do
   # Dockets namespace for PUBLIC pages
   scope(:path => 'docketing', :as => 'docketing', :module => 'docketing') do
+    root :to => 'dockets#index', :as => 'docketing_root'
     resources :perspectives, :only => [:index, :show]
     resources :dockets, :only => [:index, :show]
   end
