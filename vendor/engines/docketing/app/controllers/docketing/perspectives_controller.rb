@@ -1,8 +1,7 @@
 module Docketing
-  class PerspectivesController < ApplicationController
+  class PerspectivesController < DocketingController
 
     before_filter :find_all_docketing_perspectives
-    before_filter :find_page
 
     def index
       # you can use meta fields from your model instead (e.g. browser_title)
@@ -22,10 +21,6 @@ module Docketing
 
     def find_all_docketing_perspectives
       @docketing_perspectives = DocketingPerspective.scoped
-    end
-
-    def find_page
-      @page = Page.where(:link_url => "/docketing_perspectives").first
     end
 
   end
