@@ -1,16 +1,16 @@
-Factory.define :docket do |f|
+Factory.define :docketing_docket do |f|
   f.sequence(:name) { |i| "Docket #{i}" }
 end
 
-Factory.define :item, :class => 'DocketItem' do |f|
-  f.association :docket
-  f.association :perspective, :factory => :perspective
+Factory.define :docketing_item do |f|
+  f.association :docket, :factory => :docketing_docket
+  f.association :perspective, :factory => :docketing_perspective
   f.association :creator, :factory => :docketing_user
   f.sequence(:title) { |i| "Item #{i}" }
   f.content "This is the content of the document."
 end
 
-Factory.define :perspective, :class => 'DocketPerspective' do |f|
+Factory.define :docketing_perspective do |f|
   f.sequence( :name ) { |i| "Perspective #{i}" }
 end
 

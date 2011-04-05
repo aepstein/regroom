@@ -11,14 +11,14 @@
     <%= link_to t('.create_new'), new_admin_docketing_perspective_url,
                  :class => "add_icon" %>
   </li>
-<% if !searching? and Admin::Docketing::PerspectivesController.sortable? and DocketPerspective.count > 1 %>
+<% if !searching? and Admin::Docketing::PerspectivesController.sortable? and DocketingPerspective.count > 1 %>
   <li>
-    <%= link_to t('.reorder', :what => "DocketPerspectives"),
+    <%= link_to t('.reorder', :what => "Docket Perspectives"),
                  admin_docketing_perspectives_url,
                  :id => "reorder_action",
                  :class => "reorder_icon" %>
 
-    <%= link_to t('.reorder_done', :what => "DocketPerspectives"),
+    <%= link_to t('.reorder_done', :what => "Docket Perspectives"),
                  admin_docketing_perspectives_url,
                  :id => "reorder_action_done",
                  :style => "display: none;",

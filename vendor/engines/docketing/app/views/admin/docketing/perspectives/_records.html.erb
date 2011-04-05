@@ -1,7 +1,7 @@
 <% if searching? %>
   <h2><%= t('results_for', :scope => 'shared.admin.search', :query => params[:search]) %></h2>
 <% end %>
-<% if @docket_perspectives.any? %>
+<% if @docketing_perspectives.any? %>
   <div class='pagination_container'>
     <%= render :partial => 'perspectives' %>
   </div>

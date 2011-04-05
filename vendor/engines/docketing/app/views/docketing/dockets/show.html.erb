@@ -1,12 +1,12 @@
 <% content_for :body_content_title do %>
-  <%= @docket.name %>
+  <%= @docketing_docket.name %>
 <% end %>
 
 <% content_for :body_content_left do %>
   <section>
     <h1>Name</h1>
     <p>
-      <%=raw @docket.name %>
+      <%=raw @docketing_docket.name %>
     </p>
   </section>
 <% end %>
@@ -14,10 +14,10 @@
 <% content_for :body_content_right do %>
   <aside>
     <h2><%= t('.other') %></h2>
-    <ul id="dockets">
-      <% @dockets.each do |docket| %>
+    <ul id="docketing_dockets">
+      <% @docketing_dockets.each do |docket| %>
         <li>
-          <%= link_to docket.name, docket_url(docket) %>
+          <%= link_to docket.name, docketing_docket_url(docket) %>
         </li>
       <% end %>
     </ul>
@@ -25,3 +25,4 @@
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>
+

@@ -11,7 +11,7 @@
     <%= link_to t('.create_new'), new_admin_docketing_docket_url,
                  :class => "add_icon" %>
   </li>
-<% if !searching? and Admin::Docketing::DocketsController.sortable? and Docket.count > 1 %>
+<% if !searching? and Admin::Docketing::DocketsController.sortable? and DocketingDocket.count > 1 %>
   <li>
     <%= link_to t('.reorder', :what => "Dockets"),
                  admin_docketing_dockets_url,

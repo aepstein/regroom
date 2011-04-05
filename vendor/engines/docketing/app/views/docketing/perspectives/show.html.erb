@@ -1,12 +1,12 @@
 <% content_for :body_content_title do %>
-  <%= @perspective.name %>
+  <%= @docketing_perspective.name %>
 <% end %>
 
 <% content_for :body_content_left do %>
   <section>
     <h1>Name</h1>
     <p>
-      <%=raw @perspective.name %>
+      <%=raw @docketing_perspective.name %>
     </p>
   </section>
 <% end %>
@@ -14,10 +14,10 @@
 <% content_for :body_content_right do %>
   <aside>
     <h2><%= t('.other') %></h2>
-    <ul id="docket_perspectives">
-      <% @perspectives.each do |perspective| %>
+    <ul id="docketing_perspectives">
+      <% @docketing_perspectives.each do |perspective| %>
         <li>
-          <%= link_to perspective.name, docket_perspective_path(perspective) %>
+          <%= link_to perspective.name, docketing_perspective_path(perspective) %>
         </li>
       <% end %>
     </ul>

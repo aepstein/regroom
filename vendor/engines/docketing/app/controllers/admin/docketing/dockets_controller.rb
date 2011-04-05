@@ -2,8 +2,7 @@ module Admin
   module Docketing
     class DocketsController < Admin::BaseController
 
-      crudify :docket, :searchable => true,
-              :redirect_to_url => :admin_docketing_dockets_url,
+      crudify :docketing_docket, :searchable => true,
               :title_attribute => 'name', :xhr_paging => true
 
     end

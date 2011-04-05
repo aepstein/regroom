@@ -7,5 +7,5 @@
 <%= render :partial => '/shared/admin/make_sortable',
             :locals => {
               :tree => false
-            } if !searching? and Admin::Docketing::DocketsController.sortable? and Docket.count > 1 %>
+            } if !searching? and Admin::Docketing::DocketsController.sortable? and DocketingDocket.count > 1 %>
 

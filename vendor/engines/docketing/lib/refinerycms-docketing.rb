@@ -13,7 +13,7 @@ module Refinery
           plugin.url = { :controller => 'admin/docketing/dockets', :action => 'index' }
           plugin.menu_match = /^\/?(admin|refinery)\/docketing\/?(dockets|items|perspectives)?/
           plugin.activity = {
-            :class => Docket,
+            :class => DocketingDocket,
             :title => 'name'
           }
         end

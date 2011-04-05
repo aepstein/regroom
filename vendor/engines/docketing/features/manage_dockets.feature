@@ -1,4 +1,4 @@
-@dockets
+@docketing_dockets
 Feature: Dockets
   In order to have dockets on my website
   As an administrator
@@ -8,14 +8,14 @@ Feature: Dockets
     Given I am a logged in refinery user
     And I have no dockets
 
-  @dockets-list @list
+  @docketing_dockets-list @list
   Scenario: Dockets List
    Given I have dockets titled UniqueTitleOne, UniqueTitleTwo
    When I go to the list of dockets
    Then I should see "UniqueTitleOne"
    And I should see "UniqueTitleTwo"
 
-  @dockets-valid @valid
+  @docketing_dockets-valid @valid
   Scenario: Create Valid Docket
     When I go to the list of dockets
     And I follow "Add New Docket"
@@ -24,7 +24,7 @@ Feature: Dockets
     Then I should see "'This is a test of the first string field' was successfully added."
     And I should have 1 docket
 
-  @dockets-invalid @invalid
+  @docketing_dockets-invalid @invalid
   Scenario: Create Invalid Docket (without name)
     When I go to the list of dockets
     And I follow "Add New Docket"
@@ -32,7 +32,7 @@ Feature: Dockets
     Then I should see "Name can't be blank"
     And I should have 0 dockets
 
-  @dockets-edit @edit
+  @docketing_dockets-edit @edit
   Scenario: Edit Existing Docket
     Given I have dockets titled "A name"
     When I go to the list of dockets
@@ -43,7 +43,7 @@ Feature: Dockets
     And I should be on the list of dockets
     And I should not see "A name"
 
-  @dockets-duplicate @duplicate
+  @docketing_dockets-duplicate @duplicate
   Scenario: Create Duplicate Docket
     Given I only have dockets titled UniqueTitleOne, UniqueTitleTwo
     When I go to the list of dockets
@@ -53,7 +53,7 @@ Feature: Dockets
     Then I should see "There were problems"
     And I should have 2 dockets
 
-  @dockets-delete @delete
+  @docketing_dockets-delete @delete
   Scenario: Delete Docket
     Given I only have dockets titled UniqueTitleOne
     When I go to the list of dockets

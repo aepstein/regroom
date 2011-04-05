@@ -1,8 +1,8 @@
 <% content_for :body_content_left do %>
   <ul id="docket_perspectives">
-    <% @perspectives.each do |perspective| %>
+    <% @docketing_perspectives.each do |perspective| %>
       <li>
-        <%= link_to perspective.name, docket_perspective_path(perspective) %>
+        <%= link_to perspective.name, docketing_perspective_path(perspective) %>
       </li>
     <% end %>
   </ul>

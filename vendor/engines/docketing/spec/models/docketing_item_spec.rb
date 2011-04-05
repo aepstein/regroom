@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe DocketItem do
+describe DocketingItem do
   before(:each) do
-    @item = Factory(:item)
+    @item = Factory(:docketing_item)
   end
 
   context "validations" do
@@ -17,7 +17,7 @@ describe DocketItem do
     end
 
     it 'should not save with duplicate title for a docket' do
-      duplicate = Factory.build( :item, :docket => @item.docket, :title => @item.title )
+      duplicate = Factory.build( :docketing_item, :docket => @item.docket, :title => @item.title )
       duplicate.save.should be_false
     end
 

@@ -1,7 +1,8 @@
 <ul id='sortable_list'>
-  <%= render :partial => 'docket', :collection => @dockets %>
+  <%= render :partial => 'docket', :collection => @docketing_dockets %>
 </ul>
 <%= render :partial => "/shared/admin/sortable_list",
             :locals => {
               :continue_reordering => (local_assigns.keys.include?(:continue_reordering)) ? continue_reordering : true
             } %>
+

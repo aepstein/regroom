@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Docket do
+describe DocketingDocket do
 
   before(:each) do
-    @docket = Factory(:docket)
+    @docket = Factory(:docketing_docket)
   end
 
   context "validations" do
@@ -14,7 +14,7 @@ describe Docket do
     end
 
     it 'should not save with a duplicate name' do
-      duplicate = Factory.build(:docket, :name => @docket.name)
+      duplicate = Factory.build(:docketing_docket, :name => @docket.name)
       duplicate.save.should be_false
     end
 

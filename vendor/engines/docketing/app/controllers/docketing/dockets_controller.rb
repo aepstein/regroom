@@ -11,7 +11,7 @@ module Docketing
     end
 
     def show
-      @docket = Docket.find(params[:id])
+      @docketing_docket = DocketingDocket.find(params[:id])
 
       # you can use meta fields from your model instead (e.g. browser_title)
       # by swapping @page for @docket in the line below:
@@ -21,7 +21,7 @@ module Docketing
   protected
 
     def find_all_dockets
-      @dockets = Docket.order('position ASC')
+      @docketing_dockets = DocketingDocket.order('position ASC')
     end
 
     def find_page

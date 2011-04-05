@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe DocketPerspective do
+describe DocketingPerspective do
   before(:each) do
-    @perspective = Factory(:perspective)
+    @perspective = Factory(:docketing_perspective)
   end
 
   context "validations" do
@@ -16,7 +16,7 @@ describe DocketPerspective do
     end
 
     it 'should not save with a duplicate name' do
-      duplicate = Factory.build( :perspective, :name => @perspective.name )
+      duplicate = Factory.build( :docketing_perspective, :name => @perspective.name )
       duplicate.save.should be_false
     end
   end

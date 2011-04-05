@@ -1,7 +1,7 @@
 <% if searching? %>
   <h2><%= t('results_for', :scope => 'shared.admin.search', :query => params[:search]) %></h2>
 <% end %>
-<% if @dockets.any? %>
+<% if @docketing_dockets.any? %>
   <div class='pagination_container'>
     <%= render :partial => 'dockets' %>
   </div>
@@ -16,3 +16,4 @@
     <% end %>
   </p>
 <% end %>
+

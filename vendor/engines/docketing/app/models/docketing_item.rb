@@ -1,18 +1,20 @@
 require 'state_machine'
 
-class DocketItem < ActiveRecord::Base
+class DocketingItem < ActiveRecord::Base
 
   belongs_to :creator, :class_name => 'User', :foreign_key => 'creator_user_id'
-  belongs_to :docket, :inverse_of => :items
-  belongs_to :perspective, :class_name => 'DocketPerspective',
-    :dependent => :destroy, :inverse_of => :items
+  belongs_to :docket, :inverse_of => :items, :class_name => 'DocketingDocket',
+    :foreign_key => 'docketing_docket_id'
+  belongs_to :perspective, :class_name => 'DocketingPerspective',
+    :foreign_key => 'docketing_perspective_id', :dependent => :destroy,
+    :inverse_of => :items
 
   acts_as_nested_set
 
   validates :docket, :presence => true
   validates :perspective, :presence => true
   validates :creator, :presence => true
-  validates :title, :uniqueness => { :scope => :docket_id }
+  validates :title, :uniqueness => { :scope => :docketing_docket_id }
   validates :content, :presence => true
   validate :must_have_title_if_parent_is_blank
 

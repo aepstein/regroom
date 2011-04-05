@@ -1,11 +1,12 @@
 <% content_for :body_content_left do %>
   <ul id="dockets">
-    <% @dockets.each do |docket| %>
+    <% @docketing_dockets.each do |docket| %>
       <li>
-        <%= link_to docket.name, docket_url(docket) %>
+        <%= link_to docket.name, docketing_docket_url(docket) %>
       </li>
     <% end %>
   </ul>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>
+

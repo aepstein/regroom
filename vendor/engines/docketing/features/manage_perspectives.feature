@@ -34,7 +34,7 @@ Feature: perspectives
 
   @docketing_perspectives-edit @edit
   Scenario: Edit Existing Perspective
-    Given a perspective exists with name: "A name"
+    Given I have perspectives titled AName
     When I go to the list of perspectives page
     And I follow "Edit this perspective" within ".actions"
     Then I fill in "Name" with "A different name"

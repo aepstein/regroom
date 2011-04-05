@@ -1,7 +1,7 @@
-class RefinerycmsDocketing < Refinery::Generators::EngineInstaller
+class RefinerycmsDocketingGenerator < Refinery::Generators::EngineInstaller
 
   source_root File.expand_path('../../../', __FILE__)
-  engine_name "docketing"
+  engine_name "refinerycms-docketing"
 
 end
 
