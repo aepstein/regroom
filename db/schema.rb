@@ -12,34 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20110404233956) do
 
-  create_table "docket_items", :force => true do |t|
-    t.integer  "docket_id",       :null => false
-    t.integer  "perspective_id",  :null => false
-    t.integer  "creator_user_id", :null => false
-    t.integer  "parent_id"
-    t.integer  "lft",             :null => false
-    t.integer  "rgt",             :null => false
-    t.string   "status",          :null => false
-    t.string   "title"
-    t.text     "content",         :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "docket_items", ["creator_user_id"], :name => "index_docket_items_on_creator_user_id"
-  add_index "docket_items", ["docket_id", "title"], :name => "index_docket_items_on_docket_id_and_title", :unique => true
-  add_index "docket_items", ["docket_id"], :name => "index_docket_items_on_docket_id"
-  add_index "docket_items", ["parent_id"], :name => "index_docket_items_on_parent_id"
-  add_index "docket_items", ["perspective_id"], :name => "index_docket_items_on_perspective_id"
-
-  create_table "docket_perspectives", :force => true do |t|
-    t.string   "name",       :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "docket_perspectives", ["name"], :name => "index_docket_perspectives_on_name", :unique => true
-
   create_table "docketing_dockets", :force => true do |t|
     t.string   "name",       :null => false
     t.integer  "position"
@@ -76,15 +48,6 @@ ActiveRecord::Schema.define(:version => 20110404233956) do
   end
 
   add_index "docketing_perspectives", ["name"], :name => "index_docketing_perspectives_on_name", :unique => true
-
-  create_table "dockets", :force => true do |t|
-    t.string   "name"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "dockets", ["id"], :name => "index_dockets_on_id"
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"
