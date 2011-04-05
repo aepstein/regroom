@@ -13,6 +13,7 @@ Feature: Publicly Present Dockets
   Scenario: Show a docket (with no root items)
     Given I am on docketing_docket: "eobr" page
     Then I should see "Electronic Onboard Recorders" within "#body_content_title"
+    And I should see "Select from the following issues:"
     And I should see "There are no issues yet."
 
   @docketing_dockets-show @show

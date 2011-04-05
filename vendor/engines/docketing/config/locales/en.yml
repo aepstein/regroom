@@ -37,7 +37,7 @@ en:
   docketing:
     dockets:
       show:
-        instruction: Please select from the following issues
+        instruction: Select from the following issues
         other: Other Dockets
     items:
       items:

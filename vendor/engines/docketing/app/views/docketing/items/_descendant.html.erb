@@ -1,0 +1,10 @@
+<p>
+<% if descendant.title? %>
+<strong><%= descendant.title %></strong>
+<% else %>
+<strong><%= descendant.created_at %></strong>
+<% end %>
+</p>
+
+<%= descendant.content %>
+

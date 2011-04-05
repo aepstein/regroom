@@ -1,0 +1,10 @@
+<p>
+<% if focus.title? %>
+<strong><%= focus.title %></strong>
+<% else %>
+<strong><%= focus.created_at %></strong>
+<% end %>
+</p>
+
+<%= focus.content %>
+

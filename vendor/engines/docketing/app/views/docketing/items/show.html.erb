@@ -1,26 +1,18 @@
 <% content_for :body_content_title do %>
-  <%= @docketing_item.name %>
+  <%= @docketing_item.docket.name %> &gt; <%= @docketing_item.root %>
 <% end %>
 
 <% content_for :body_content_left do %>
   <section>
-    <h1>Name</h1>
-    <p>
-      <%=raw @docketing_item.name %>
-    </p>
+  <%= render :partial => 'ancestors', :object => @docketing_item.ancestors %>
+  <%= render :partial => 'focus', :object => @docketing_item %>
+  <%= render :partial => 'descendants', :object => @docketing_item.descendants.
+             where( :docketing_perspective_id => @docketing_item.docketing_perspective_id ) %>
   </section>
 <% end %>
 
 <% content_for :body_content_right do %>
   <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="docketing_items">
-      <% @docketing_items.each do |item| %>
-        <li>
-          <%= link_to item.name, docketing_item_path(item) %>
-        </li>
-      <% end %>
-    </ul>
   </aside>
 <% end %>
 

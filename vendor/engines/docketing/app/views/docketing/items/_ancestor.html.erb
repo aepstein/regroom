@@ -1,0 +1,10 @@
+<p>
+<% if ancestor.title? %>
+<strong><%= ancestor.title %></strong>
+<% else %>
+<strong><%= ancestor.created_at %></strong>
+<% end %>
+</p>
+
+<%= ancestor.content %>
+
