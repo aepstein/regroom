@@ -1,3 +1,13 @@
+== Welcome to RegRoom
+
+This project is an attempt to reimplement the regulation room web application
+using Ruby on Rails.  This implementation is built on RefineryCMS, which is in
+turn built on the Rails framework.  Most of the application functionality can
+be found in the following engines:
+
+* docketing: A system for managing dockets.
+* survey: TODO: Survey collection system.
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
@@ -254,3 +264,4 @@ vendor
   External libraries that the application depends on. Also includes the plugins
   subdirectory. If the app has frozen rails, those gems also go here, under
   vendor/rails/. This directory is in the load path.
+

@@ -18,7 +18,7 @@ class CreateDocketingDockets < ActiveRecord::Migration
   end
 
   def self.down
-    UserPlugin.destroy_all({:name => "dockets"})
+    UserPlugin.destroy_all({:name => "refinerycms_docketing"})
 
     Page.delete_all({:link_url => "/dockets"})
 
