@@ -1,6 +1,6 @@
     <% if items.any? -%>
-    <ul>
-      <%= render :partial => 'item', :collection => items %>
+    <ul id="docketing_items">
+      <%= render :partial => '/docketing/items/item', :collection => items %>
     </ul>
     <% else -%>
     <p>

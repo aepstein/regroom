@@ -3,7 +3,10 @@ Refinery::Application.routes.draw do
   scope(:path => 'docketing', :as => 'docketing', :module => 'docketing') do
     root :to => 'dockets#index', :as => 'docketing_root'
     resources :perspectives, :only => [:index, :show]
-    resources :dockets, :only => [:index, :show]
+    resources :dockets, :only => [:index, :show] do
+      resources :items, :only => [:index]
+    end
+    resources :items, :only => [:show]
   end
 
   # Admin namespace
