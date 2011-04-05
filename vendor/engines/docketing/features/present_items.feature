@@ -14,10 +14,10 @@ Feature: Publicly Present Docket Items
     And a docketing_item: "child" exists with title: "Calculation", docket: docketing_docket "eobr", parent: docketing_item "root", perspective: docketing_perspective "issue"
     And a docketing_item: "root_comment" exists with title: "Cost is too high", docket: docketing_docket "eobr", parent: docketing_item "root", perspective: docketing_perspective "comment"
     And a docketing_item: "child_comment" exists with title: "Cost overestimated for drivers", docket: docketing_docket "eobr", parent: docketing_item "child", perspective: docketing_perspective "comment"
-    And a docketing_item: "alt_root" exists with title: "Privacy", docket: docketing_docket "eobr"
+    And a docketing_item: "alt_root" exists with title: "Privacy", docket: docketing_docket "eobr", perspective: docketing_perspective "issue"
 
   @docketing_items-show @show
-  Scenario: Show an item (with child)
+  Scenario: Show an item (root with child)
     Given I am on docketing_item: "root" page
     Then I should see "Electronic Onboard Recorders"
     And I should see "Cost"
@@ -25,4 +25,30 @@ Feature: Publicly Present Docket Items
     And I should not see "Privacy"
     And I should not see "Cost is too high"
     And I should not see "Cost overestimated for drivers"
+
+  @docketing_items-show @show
+  Scenario: Show an item (root without child)
+    Given I am on docketing_item: "alt_root" page
+    Then I should see "Electronic Onboard Recorders"
+    And I should not see "Cost"
+    And I should see "Privacy"
+
+  @docketing_items-show @show
+  Scenario: Show an item (child with no children in perspective)
+    Given I am on the docketing_item: "child" page
+    Then I should see "Electronic Onboard Recorders"
+    And I should see "Cost"
+    And I should see "Calculation"
+    And I should not see "Cost is too high"
+    And I should not see "Cost overestimated for drivers"
+    And I should not see "Privacy"
+
+  @docketing_items-show @show
+  Scenario: Show an item (child in a different perspective from ancestors)
+    Given I am on the docketing_item: "child_comment" page
+    Then I should see "Electronic Onboard Recorders"
+    And I should see "Cost"
+    And I should see "Calculation"
+    And I should see "Cost is too high"
+    And I should see "Cost overestimated for drivers"
 
