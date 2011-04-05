@@ -11,7 +11,7 @@ class DocketingItem < ActiveRecord::Base
 
   acts_as_nested_set :scope => :docketing_docket
 
-  acts_as_index [ :title, :content ]
+  acts_as_indexed :fields => [ :title, :content ]
 
   validates :docket, :presence => true
   validates :perspective, :presence => true

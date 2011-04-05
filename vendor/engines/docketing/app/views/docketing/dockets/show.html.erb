@@ -4,10 +4,11 @@
 
 <% content_for :body_content_left do %>
   <section>
-    <h1>Name</h1>
     <p>
-      <%=raw @docketing_docket.name %>
+      <%= t('.instruction') %>:
     </p>
+    <%= render :partial => '/docketing/items/items',
+               :object => @docketing_docket.items.roots %>
   </section>
 <% end %>
 

@@ -37,7 +37,11 @@ en:
   docketing:
     dockets:
       show:
+        instruction: Please select from the following issues
         other: Other Dockets
+    items:
+      items:
+        no_items_yet: There are no issues yet.
     perspectives:
       show:
         other: Other Perspectives

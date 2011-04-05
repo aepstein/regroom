@@ -1,0 +1,10 @@
+    <% if items.any? -%>
+    <ul>
+      <%= render :partial => 'item', :collection => items %>
+    </ul>
+    <% else -%>
+    <p>
+    <%= t('.no_items_yet') %>
+    </p>
+    <% end -%>
+

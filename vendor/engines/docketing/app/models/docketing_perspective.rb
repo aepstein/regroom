@@ -5,7 +5,7 @@ class DocketingPerspective < ActiveRecord::Base
 
   has_friendly_id :name, :use_slug => true
 
-  acts_as_indexed [ :name ]
+  acts_as_indexed :fields => [ :name ]
 
   validates :name, :presence => true, :uniqueness => true
 
