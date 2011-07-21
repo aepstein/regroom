@@ -1,5 +1,3 @@
-require 'state_machine'
-
 class DocketingItem < ActiveRecord::Base
 
   belongs_to :creator, :class_name => 'User', :foreign_key => 'creator_user_id'
@@ -9,7 +7,7 @@ class DocketingItem < ActiveRecord::Base
     :foreign_key => 'docketing_perspective_id', :dependent => :destroy,
     :inverse_of => :items
 
-  acts_as_nested_set :scope => :docketing_docket
+  has_ancestry
 
   acts_as_indexed :fields => [ :title, :content ]
 

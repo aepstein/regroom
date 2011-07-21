@@ -25,9 +25,7 @@ ActiveRecord::Schema.define(:version => 20110404233956) do
     t.integer  "docketing_docket_id",      :null => false
     t.integer  "docketing_perspective_id", :null => false
     t.integer  "creator_user_id",          :null => false
-    t.integer  "parent_id"
-    t.integer  "lft",                      :null => false
-    t.integer  "rgt",                      :null => false
+    t.string   "ancestry"
     t.string   "status",                   :null => false
     t.string   "title"
     t.text     "content",                  :null => false
@@ -35,11 +33,11 @@ ActiveRecord::Schema.define(:version => 20110404233956) do
     t.datetime "updated_at"
   end
 
+  add_index "docketing_items", ["ancestry"], :name => "index_docketing_items_on_ancestry"
   add_index "docketing_items", ["creator_user_id"], :name => "index_docketing_items_on_creator_user_id"
   add_index "docketing_items", ["docketing_docket_id", "title"], :name => "index_docketing_items_on_docketing_docket_id_and_title", :unique => true
   add_index "docketing_items", ["docketing_docket_id"], :name => "index_docketing_items_on_docketing_docket_id"
   add_index "docketing_items", ["docketing_perspective_id"], :name => "index_docketing_items_on_docketing_perspective_id"
-  add_index "docketing_items", ["parent_id"], :name => "index_docketing_items_on_parent_id"
 
   create_table "docketing_perspectives", :force => true do |t|
     t.string   "name",       :null => false

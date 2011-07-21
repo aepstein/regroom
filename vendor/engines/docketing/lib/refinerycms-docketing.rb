@@ -1,4 +1,6 @@
 require 'refinerycms-base'
+require 'ancestry'
+require 'state_machine'
 
 module Refinery
   module Docketing
